@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <!--
+
+        handle pattern
+
+        [router_config_node_name]_[controller_name]_[action_name]
+    -->
+    <default>
+    <!-- catalog_product_view -->
+    <!-- catalog_product_gallery -->
+        <reference name="head">
+             <action method="addItem">
+                <type>skin_js</type>
+                <name>nobl_newproducts/Jssor.Slider.FullPack/js/jssor.js</name>
+                <params/>
+                <if/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>nobl_newproducts/Jssor.Slider.FullPack/js/jssor.slider.js</name>
+                <params/>
+                <if/>
+            </action>
+        </reference>
+
+		<reference name="right">
+            <block type="newproducts/newproducts" name="foo" as="right_newproducts" before="++" template="nobl/newproducts/newproducts.phtml" />
+        </reference>
+    <!--/ccatalog_product_gallery-->
+    <!--/catalog_product_view-->
+    </default>
+</layout>
