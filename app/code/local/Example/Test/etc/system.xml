@@ -1,43 +1,46 @@
 <?xml version="1.0"?>
 <config>
     <tabs>
-    	<highlightconfig translate="label" module="test">
+    	<test translate="label" module="test">
     		<label>Knoblock</label>
     		<sort_order>0</sort_order>
-    	</highlightconfig>
+    	</test>
     </tabs>
     <!-- Must have greater than zero sections for tab above to show up -->
     <sections>
-    	<example translate="label" module="test">
+    	<test translate="label" module="test">
     		<!-- Must match tab defined above -->
-    		<tab>highlightconfig</tab>
-            <label>Highlight New Products Options</label>
+    		<tab>test</tab>
+            <label>New Products Options</label>
             <frontend_type>text</frontend_type>
             <sort_order>100</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
-				<product_highlights_setting translate="label">
-                    <label>Products to highlight</label>
+            	<new_products_values translate="label comment">
+                    <label>New Products</label>
+                    <comment>Enter products you wish to show as new. Comma-separated.</comment>
                     <frontend_type>text</frontend_type>
-                    <sort_order>11</sort_order>
+                    <!-- validate>validate-per-page-value-list</validate -->
+                    <!--<source_model>adminhtml/system_config_source_catalog_gridPerPage</source_model>-->
+                    <sort_order>2</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
-                    <show_in_store>0</show_in_store>
+                    <show_in_store>1</show_in_store>
                     <fields>
-                        <title translate="label comment">
-                            <label>Products </label>
-                            <comment>Show your title here</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>1</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </title>
+	                    <skus translate="label comment">
+	                        <label>Products </label>
+	                        <comment>Enter SKUs for products</comment>
+	                        <frontend_type>text</frontend_type>
+	                        <sort_order>1</sort_order>
+	                        <show_in_default>1</show_in_default>
+	                        <show_in_website>1</show_in_website>
+	                        <show_in_store>1</show_in_store>
+	                    </skus>
                     </fields>
-                </product_highlights_setting>
+                </new_products_values>
 			</groups>
-        </example>
+        </test>
    </sections>
 </config>

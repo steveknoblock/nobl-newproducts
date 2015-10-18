@@ -29,6 +29,13 @@
                 <class>Example_Test_Block</class>
             </test>
         </blocks>
+        <!-- required by admin area to use configuration menu -->
+        <models>
+            <test>
+                <class>Example_Test_Models</class>
+            </test>
+        </models>
+        <!-- default helper required by admin area to use configuration menu -->
         <helpers>
             <test>
                 <class>Example_Test_Helper</class>

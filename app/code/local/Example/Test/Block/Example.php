@@ -2,6 +2,45 @@
 
 class Example_Test_Block_Example extends Mage_Core_Block_Template {
 
+public function getNewProductsList($skuList) {
+        
+        //var_dump($skuList);
+
+/*
+        if(!is_array($skuList)) {
+            $skuList = array();
+        }
+*/
+        $productIds = explode(',', $skuList);
+        //var_dump($productIds);
+
+
+        $collection = Mage::getResourceModel('catalog/product_collection')
+        ->addAttributeToSelect('*')
+        ->addAttributeToFilter(
+        'sku', array('in' => $productIds)
+    )
+    ->addMinimalPrice()
+    ->addTaxPercents()
+    ->addStoreFilter(); 
+
+    //var_dump($collection);
+
+    Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
+    Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);
+
+// set pagination
+$collection->setPageSize(5);
+
+echo "Breakpoint";
+foreach ($collection as $product) {
+    var_dump($product);
+}
+
+return $collection;
+
+
+    }
 	public function getNewProducts() {
 		
 		$today  = Mage::app()->getLocale()->date()->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
@@ -27,11 +66,17 @@ class Example_Test_Block_Example extends Mage_Core_Block_Template {
                             ->addTaxPercents()
                             ->addStoreFilter(); 
 
+
                             Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         					Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);
 
         					// set pagination
         					$collection->setPageSize(5);
+                            //var_dump($collection);
+                            foreach ($collection as $product) {
+    var_dump($product);
+}
+die("Breakpoint");
         					return $collection;
 	}
                                                                                                                                                                                                                                                                                                                           
