@@ -1,4 +1,4 @@
 <?php
-    class Example_Newproducts_Helper_Data extends Mage_Core_Helper_Abstract
+    class Nobl_Newproducts_Helper_Data extends Mage_Core_Helper_Abstract
         {
         }

@@ -4,14 +4,15 @@
 		public function indexAction()
                     {		
                         $this->loadLayout();
-
-                        /* Alan Storm debug block
-                        $block = $this->getLayout()->createBlock('id/action');
+                        
+                        /* Alan Storm debug code */
+                        /*
+                        $block = $this->getLayout()->createBlock('newproducts/newproducts');
 						var_dump($block);
 						{
-						    $block->setTemplate('example/newproducts/exampleblock.phtml');
+						    $block->setTemplate('nobl/newproducts/newproducts.phtml');
 						    var_dump($block->toHtml());   
-						}    
+						}     
 						*/
 
                         $this->renderLayout();

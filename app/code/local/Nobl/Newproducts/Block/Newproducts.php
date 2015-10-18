@@ -3,7 +3,7 @@
 class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
 
 public function getNewProductsList($skuList) {
-        
+
         $productIds = explode(',', $skuList);
  
         $collection = Mage::getResourceModel('catalog/product_collection')

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Example_Newproducts>
+        <Nobl_Newproducts>
             <version>1.0.0</version>
-        </Example_Newproducts>
+        </Nobl_Newproducts>
     </modules>
     <frontend>
         <routers>
             <newproducts>
                 <use>standard</use>
                 <args>
-                    <module>Example_Newproducts</module>
+                    <module>Nobl_Newproducts</module>
                     <frontName>newproducts</frontName>
                 </args>
             </newproducts>
@@ -18,7 +18,7 @@
     <layout>
             <updates>
                 <doesnotmatter>
-                    <file>example_test.xml</file>
+                    <file>nobl_newproducts.xml</file>
                 </doesnotmatter>
             </updates>
         </layout>
@@ -26,26 +26,20 @@
     <global>
         <blocks>
             <newproducts>
-                <class>Example_Newproducts_Block</class>
+                <class>Nobl_Newproducts_Block</class>
             </newproducts>
         </blocks>
         <!-- required by admin area to use configuration menu -->
         <models>
             <newproducts>
-                <class>Example_Newproducts_Models</class>
+                <class>Nobl_Newproducts_Models</class>
             </newproducts>
         </models>
         <!-- default helper required by admin area to use configuration menu -->
         <helpers>
             <newproducts>
-                <class>Example_Newproducts_Helper</class>
+                <class>Nobl_Newproducts_Helper</class>
             </newproducts>
         </helpers>
     </global>
-    <default>
-        <product_highlights>
-            <sku_list_setting>123,321,121
-            </sku_list_setting>
-        </product_highlights>
-    </default>
 </config>
