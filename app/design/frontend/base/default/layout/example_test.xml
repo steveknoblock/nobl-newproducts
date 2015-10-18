@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+             <action method="addItem">
+                <type>skin_js</type>
+                <name>example_test/Jssor.Slider.FullPack/js/jssor.js</name>
+                <params/>
+                <if/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>example_test/Jssor.Slider.FullPack/js/jssor.slider.js</name>
+                <params/>
+                <if/>
+            </action>
+        </reference>
+		<reference name="content">
+            <block type="test/example" name="test" template="example/test/exampleblock.phtml" />
+        </reference>
+    </default>
+</layout>

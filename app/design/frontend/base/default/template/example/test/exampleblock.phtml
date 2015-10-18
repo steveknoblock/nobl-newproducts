@@ -1,0 +1,26 @@
+<?php $newproducts = $this->getNewProducts(); ?>
+
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 400px;">
+<?php if ($newproducts->count()>0): ?>
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 400px;">
+    <?php foreach ($newproducts as $product) : ?>
+        <!-- slide -->
+        <div>
+            <img u="image" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(600) ?>" alt="<?php echo $product->getName(); ?>" />
+            <div u="caption" t="<?php echo $product->getName(); ?>" style="position: absolute; top: 260px; left: 160px; width: 50px;height: 50px;"><?php echo $product->getName(); ?> <?php echo Mage::helper('core')->currency($product->getFinalPrice(),true,false); ?> <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation(' <?php echo $this->helper('checkout/cart')->getAddUrl($product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+            </div>
+            
+        </div>
+        <!-- end slide -->
+    <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+</div>
+<!-- it works the same with all jquery version from 1.x to 2.x -->
+<script>
+    jQuery(document).ready(function ($) {
+        var options = { $AutoPlay: true };
+        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+    });
+</script>
