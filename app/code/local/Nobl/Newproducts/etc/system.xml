@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <config>
     <tabs>
-    	<test translate="label" module="test">
+    	<newproducts translate="label" module="newproducts">
     		<label>Knoblock</label>
     		<sort_order>0</sort_order>
-    	</test>
+    	</newproducts>
     </tabs>
     <!-- Must have greater than zero sections for tab above to show up -->
     <sections>
-    	<test translate="label" module="test">
+    	<newproducts translate="label" module="newproducts">
     		<!-- Must match tab defined above -->
-    		<tab>test</tab>
+    		<tab>newproducts</tab>
             <label>New Products Options</label>
             <frontend_type>text</frontend_type>
             <sort_order>100</sort_order>
@@ -41,6 +41,6 @@
                     </fields>
                 </new_products_values>
 			</groups>
-        </test>
+        </newproducts>
    </sections>
 </config>

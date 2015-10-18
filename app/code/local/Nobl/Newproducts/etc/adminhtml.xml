@@ -7,9 +7,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <test>
+                                        <newproducts>
                                             <title>Store New Products option</title>
-                                        </test>
+                                        </newproducts>
                                     </children>
                                 </config>
                             </children>

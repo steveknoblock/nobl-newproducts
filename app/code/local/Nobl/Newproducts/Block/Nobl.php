@@ -1,6 +1,6 @@
 <?php
 
-class Nobl_Test_Block_Nobl extends Mage_Core_Block_Template {
+class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
 
 public function getNewProductsList($skuList) {
         

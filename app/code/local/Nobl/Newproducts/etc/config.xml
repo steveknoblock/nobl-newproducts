@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Example_Test>
+        <Example_Newproducts>
             <version>1.0.0</version>
-        </Example_Test>
+        </Example_Newproducts>
     </modules>
     <frontend>
         <routers>
-            <test>
+            <newproducts>
                 <use>standard</use>
                 <args>
-                    <module>Example_Test</module>
-                    <frontName>test</frontName>
+                    <module>Example_Newproducts</module>
+                    <frontName>newproducts</frontName>
                 </args>
-            </test>
+            </newproducts>
         </routers>
     <layout>
             <updates>
@@ -25,21 +25,21 @@
     </frontend>
     <global>
         <blocks>
-            <test>
-                <class>Example_Test_Block</class>
-            </test>
+            <newproducts>
+                <class>Example_Newproducts_Block</class>
+            </newproducts>
         </blocks>
         <!-- required by admin area to use configuration menu -->
         <models>
-            <test>
-                <class>Example_Test_Models</class>
-            </test>
+            <newproducts>
+                <class>Example_Newproducts_Models</class>
+            </newproducts>
         </models>
         <!-- default helper required by admin area to use configuration menu -->
         <helpers>
-            <test>
-                <class>Example_Test_Helper</class>
-            </test>
+            <newproducts>
+                <class>Example_Newproducts_Helper</class>
+            </newproducts>
         </helpers>
     </global>
     <default>

@@ -16,7 +16,7 @@
             </action>
         </reference>
 		<reference name="content">
-            <block type="test/example" name="test" template="example/test/exampleblock.phtml" />
+            <block type="newproducts/example" name="newproducts" template="example/newproducts/exampleblock.phtml" />
         </reference>
     </default>
 </layout>
