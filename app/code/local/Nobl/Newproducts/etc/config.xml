@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Nobl_Newproducts>
+            <version>1.0.0</version>
+        </Nobl_Newproducts>
+    </modules>
+    <frontend>
+        <routers>
+            <newproducts>
+                <use>standard</use>
+                <args>
+                    <module>Nobl_Newproducts</module>
+                    <frontName>newproducts</frontName>
+                </args>
+            </newproducts>
+        </routers>
+    <layout>
+            <updates>
+                <doesnotmatter>
+                    <file>nobl_newproducts.xml</file>
+                </doesnotmatter>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <newproducts>
+                <class>Nobl_Newproducts_Block</class>
+            </newproducts>
+        </blocks>
+        <!-- required by admin area to use configuration menu -->
+        <models>
+            <newproducts>
+                <class>Nobl_Newproducts_Models</class>
+            </newproducts>
+        </models>
+        <!-- default helper required by admin area to use configuration menu -->
+        <helpers>
+            <newproducts>
+                <class>Nobl_Newproducts_Helper</class>
+            </newproducts>
+        </helpers>
+    </global>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+         <Nobl_Newproducts>
+             <active>true</active>
+             <codePool>local</codePool>
+             <version>1.0</version>
+         </Nobl_Newproducts>
+    </modules> 
+</config>
