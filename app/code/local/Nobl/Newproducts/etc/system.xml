@@ -2,7 +2,7 @@
 <config>
     <tabs>
     	<newproducts translate="label" module="newproducts">
-    		<label>Knoblock</label>
+    		<label>Nobl</label>
     		<sort_order>0</sort_order>
     	</newproducts>
     </tabs>
@@ -18,9 +18,31 @@
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
+                <product_limit translate="label comment">
+                    <label>Product Limit</label>
+                    <comment>Enter the maximum number of products you want to display in the slider.</comment>
+                    <frontend_type>text</frontend_type>
+                    <!-- validate>validate-per-page-value-list</validate -->
+                    <!--<source_model>adminhtml/system_config_source_catalog_gridPerPage</source_model>-->
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <products translate="label comment">
+                            <label>Limit</label>
+                            <comment>Enter the maximum number of products</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </products>
+                    </fields>
+                </product_limit>
             	<new_products_values translate="label comment">
                     <label>New Products</label>
-                    <comment>Enter products you wish to show as new. Comma-separated.</comment>
+                    <comment>Enter SKUs for products to display.</comment>
                     <frontend_type>text</frontend_type>
                     <!-- validate>validate-per-page-value-list</validate -->
                     <!--<source_model>adminhtml/system_config_source_catalog_gridPerPage</source_model>-->
@@ -31,13 +53,22 @@
                     <fields>
 	                    <skus translate="label comment">
 	                        <label>Products </label>
-	                        <comment>Enter SKUs for products</comment>
+	                        <comment>Comma-separated.</comment>
 	                        <frontend_type>text</frontend_type>
 	                        <sort_order>1</sort_order>
 	                        <show_in_default>1</show_in_default>
 	                        <show_in_website>1</show_in_website>
 	                        <show_in_store>1</show_in_store>
 	                    </skus>
+                        <automatic translate="label comment">
+                          <label>Automatically choose new products.</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>adminhtml/system_config_source_yesno</source_model>
+                          <sort_order>200</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>1</show_in_store>
+                        </automatic>
                     </fields>
                 </new_products_values>
 			</groups>

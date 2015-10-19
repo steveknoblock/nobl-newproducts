@@ -2,12 +2,7 @@
 
 class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
 
-
     public function getNewProductsList($products, $limit) {
-
-        echo "<p>Products";
-        var_dump($products);
-        //die("Stop");
 
         //$products['ids'] = '410,413,418';
         //$products['skus'] = 'mtk004c,mkt012c,wbk003c';
@@ -30,7 +25,7 @@ class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
                 $o[] = array('attribute' => 'entity_id', 'eq' => $id);
             }
         }
-        var_dump($o);
+
 
         $collection = Mage::getResourceModel('catalog/product_collection')
         ->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
