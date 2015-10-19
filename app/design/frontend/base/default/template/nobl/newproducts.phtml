@@ -1,7 +1,33 @@
 <?php
     //nobl/newproducts/newproducts.phtml
 
-    $newproducts = $this->getNewProducts(5);
+    /*
+        Returns an array containing values from the module
+        section in the admin as defined by system.xml
+    */
+    $config = Mage::getStoreconfig('newproducts');          
+
+    // get product_limit/products value
+    $limit = $config['product_limit']['products'];
+
+    echo "<p>Product Limit: {$limit}";
+
+
+    echo "<p>New Product Values:";
+    var_dump($config['new_products_values']);
+
+    //$products['ids'] = $confg['new_products_values']['skus'];
+    //$product['skus'] = $confg['new_products_values'];
+
+
+    //var_dump($products);
+
+    /* Product values come as skus or ids depending on
+     * how they are named in the system.cfg
+     */
+    $newproducts = $this->getNewProductsList($config['new_products_values'], $limit);
+
+    //$newproducts = $this->getNewProducts($limit);
 
  ?>
 <h3>New Products</h3>
