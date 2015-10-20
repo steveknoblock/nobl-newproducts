@@ -106,8 +106,7 @@ class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
             $attributes = $eavConfig->getEntityAttributeCodes(
                 Mage_Catalog_Model_Product::ENTITY
             );
-            //var_dump($attributes);
-            //die('ATTR');
+           
             if (in_array('featured',$attributes)) {
                 if($featured) {
                     $collection->addAttributeToFilter('featured', 1);
