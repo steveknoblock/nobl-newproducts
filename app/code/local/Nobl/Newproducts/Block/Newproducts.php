@@ -56,7 +56,7 @@ class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
 
 
     public function getNewProducts($limit, $featured) {
-        echo "B2";
+
         // after Mage_Catalog_Block_Product_New
         $todayStartOfDayDate  = Mage::app()->getLocale()->date()
             ->setTime('00:00:00')
