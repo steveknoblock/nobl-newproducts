@@ -2,8 +2,8 @@
 
 class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
 
-    public function getNewProductsList($products, $limit) {
-
+    public function getNewProductsList($products, $limit, $featured) {
+echo "B1";
         //$products['ids'] = '410,413,418';
         //$products['skus'] = 'mtk004c,mkt012c,wbk003c';
 
@@ -34,6 +34,22 @@ class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
         ->addTaxPercents()
         ->addStoreFilter()
         ->setPageSize($limit);  // set pagination
+        
+        /* Restrict to featured products */
+
+            $eavConfig = Mage::getModel('eav/config');
+            /* @var $eavConfig Mage_Eav_Model_Config */
+
+            $attributes = $eavConfig->getEntityAttributeCodes(
+                Mage_Catalog_Model_Product::ENTITY
+            );
+            //var_dump($attributes);
+            //die('ATTR');
+            if (in_array('featured',$attributes)) {
+                if($featured) {
+                    $collection->addAttributeToFilter('featured', 1);
+                }
+            }
 
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);
@@ -42,8 +58,8 @@ class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
     }
 
 
-    public function getNewProducts($limit) {
-
+    public function getNewProducts($limit, $featured) {
+        echo "B2";
         // after Mage_Catalog_Block_Product_New
         $todayStartOfDayDate  = Mage::app()->getLocale()->date()
             ->setTime('00:00:00')
@@ -84,6 +100,23 @@ class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
             // may be unnecessary with only add to cart button visible
             // jssor does not allow clicking on image in this configuration
             //->addUrlRewrite();
+
+            /* Restrict to featured products */
+
+            $eavConfig = Mage::getModel('eav/config');
+            /* @var $eavConfig Mage_Eav_Model_Config */
+
+            $attributes = $eavConfig->getEntityAttributeCodes(
+                Mage_Catalog_Model_Product::ENTITY
+            );
+            //var_dump($attributes);
+            //die('ATTR');
+            if (in_array('featured',$attributes)) {
+                if($featured) {
+                    $collection->addAttributeToFilter('featured', 1);
+                }
+            }
+
 
             Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
             Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);

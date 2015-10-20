@@ -20,21 +20,25 @@
     //$product['skus'] = $confg['new_products_values'];
 
     // the value for your yes/no (boolean) field
-    $toggle = Mage::getStoreConfig('newproducts/new_products_values/toggle');
+    $automatic = Mage::getStoreConfig('newproducts/new_products_values/automatic');
+    $featured = Mage::getStoreConfig('newproducts/new_products_values/featured');
+
+    var_dump($automatic);
+    var_dump($featured);
 
     //var_dump($products);
 
-    if($toggle === false) {
-
+    if($automatic == false) {
+        echo "<p>Not Automatic";
        /* Product values come as skus or ids depending on
          * how they are named in the system.cfg
          */
-        $newproducts = $this->getNewProductsList($config['new_products_values'], $limit);
+        $newproducts = $this->getNewProductsList($config['new_products_values'], $limit, $featured);
 
     } else {
         /* Product values are the newest in the catalog.
          */
-        $newproducts = $this->getNewProducts($limit);
+        $newproducts = $this->getNewProducts($limit, $featured);
     }
 
  
