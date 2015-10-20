@@ -10,26 +10,13 @@
     // get product_limit/products value
     $limit = $config['product_limit']['products'];
 
-    //echo "<p>Product Limit: {$limit}";
-
-
-    //echo "<p>New Product Values:";
-    //var_dump($config['new_products_values']);
-
-    //$products['ids'] = $confg['new_products_values']['skus'];
-    //$product['skus'] = $confg['new_products_values'];
-
-    // the value for your yes/no (boolean) field
     $automatic = Mage::getStoreConfig('newproducts/new_products_values/automatic');
     $featured = Mage::getStoreConfig('newproducts/new_products_values/featured');
 
-    var_dump($automatic);
-    var_dump($featured);
-
-    //var_dump($products);
+    //var_dump($automatic);
+    //var_dump($featured);
 
     if($automatic == false) {
-        echo "<p>Not Automatic";
        /* Product values come as skus or ids depending on
          * how they are named in the system.cfg
          */
@@ -42,9 +29,6 @@
     }
 
  
-
-    //$newproducts = $this->getNewProducts($limit);
-
  ?>
 <h3>New Products</h3>
 <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 260px; height: 260px;">

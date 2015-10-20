@@ -3,9 +3,6 @@
 class Nobl_Newproducts_Block_Newproducts extends Mage_Core_Block_Template {
 
     public function getNewProductsList($products, $limit, $featured) {
-echo "B1";
-        //$products['ids'] = '410,413,418';
-        //$products['skus'] = 'mtk004c,mkt012c,wbk003c';
 
         /*
          * Handle product entity id or sku
