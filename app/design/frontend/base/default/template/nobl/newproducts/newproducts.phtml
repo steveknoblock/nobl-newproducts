@@ -1,8 +1,34 @@
 <?php
     //nobl/newproducts/newproducts.phtml
 
-    $newproducts = $this->getNewProducts(5);
+    /*
+        Returns an array containing values from the module
+        section in the admin as defined by system.xml
+    */
+    $config = Mage::getStoreconfig('newproducts');          
 
+    // get product_limit/products value
+    $limit = $config['product_limit']['products'];
+
+    $automatic = Mage::getStoreConfig('newproducts/new_products_values/automatic');
+    $featured = Mage::getStoreConfig('newproducts/new_products_values/featured');
+
+    //var_dump($automatic);
+    //var_dump($featured);
+
+    if($automatic == false) {
+       /* Product values come as skus or ids depending on
+         * how they are named in the system.cfg
+         */
+        $newproducts = $this->getNewProductsList($config['new_products_values'], $limit, $featured);
+
+    } else {
+        /* Product values are the newest in the catalog.
+         */
+        $newproducts = $this->getNewProducts($limit, $featured);
+    }
+
+ 
  ?>
 <h3>New Products</h3>
 <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 260px; height: 260px;">
